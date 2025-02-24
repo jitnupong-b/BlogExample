@@ -1,5 +1,6 @@
 package scisrc.mobiledev.blogexample
 
+import com.google.firebase.Timestamp
 import com.google.firebase.database.ServerValue
 
 data class User(
@@ -10,10 +11,10 @@ data class User(
 )
 
 data class Post(
-    val userId: String = "",
+    val id: String = "",
     val title: String = "",
     val content: String = "",
-    val category: String = "",
-    val timestamp: Any = ServerValue.TIMESTAMP,
-    val likes: Int = 0
+    val author: String = "",
+    val timestamp: Timestamp ?= null,
+    val imageUrl: String = ""
 )
