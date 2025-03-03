@@ -1,3 +1,26 @@
 <resources>
     <string name="app_name">BlogExample</string>
+    <string name="app_logo">Application Logo</string>
+    <string name="create_account">Create Account</string>
+    <string name="full_name">Full Name</string>
+    <string name="email">Email Address</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="terms_agreement">I agree to the Terms and Conditions</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="already_have_account">Already have an account?</string>
+    <string name="login">Log In</string>
+
+    <!-- Login Strings -->
+    <string name="welcome_back">Welcome Back</string>
+    <string name="login_to_continue">Log in to continue to your account</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="remember_me">Remember Me</string>
+    <string name="or">OR</string>
+    <string name="dont_have_account">Don\'t have an account?</string>
+
+    <!-- Social Login -->
+    <string name="login_with_google">Login with Google</string>
+    <string name="login_with_facebook">Login with Facebook</string>
+    <string name="login_with_twitter">Login with Twitter</string>
 </resources>
