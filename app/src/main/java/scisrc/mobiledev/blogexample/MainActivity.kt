@@ -24,7 +24,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var adapter: PostAdapter
     private lateinit var database: FirebaseFirestore
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -183,7 +182,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun readPosts() {
-        // ßshowLoading(true)
+        // showLoading(true)
 
         database.collection("blog_posts")
             .orderBy("timestamp", Query.Direction.DESCENDING)
@@ -226,7 +225,7 @@ class MainActivity : AppCompatActivity() {
         AlertDialog.Builder(this)
             .setTitle("Add New Post")
             .setView(dialogView)
-            .setPositiveButton("Post") { dialog, _ ->
+            .setPositiveButton("Post") { _, _ ->
                 // Validate inputs
                 val title = etTitle.text.toString().trim()
                 val content = etContent.text.toString().trim()

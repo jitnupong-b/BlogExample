@@ -4,9 +4,10 @@ import com.google.firebase.Timestamp
 import com.google.firebase.database.ServerValue
 
 data class User(
-    val name: String = "",
+    val id: String = "",
+    val fullName: String = "",
     val email: String = "",
-    val age: Int = 0,
+    val password: String = "",
     val createdAt: Any = ServerValue.TIMESTAMP
 )
 
