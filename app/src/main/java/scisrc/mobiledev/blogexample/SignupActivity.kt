@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.util.Patterns
 import android.view.View
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.Firebase
 import com.google.firebase.firestore.FieldValue
@@ -21,7 +20,7 @@ class SignupActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+        binding = ActivitySignupBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         // Initialize Firebase
@@ -97,7 +96,8 @@ class SignupActivity : AppCompatActivity() {
 
         // Validate terms checkbox
         if (!binding.cbTerms.isChecked) {
-            Toast.makeText(this, "Please agree to the Terms and Conditions", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Please agree to the Terms and Conditions", Toast.LENGTH_SHORT)
+                .show()
             isValid = false
         }
 
@@ -115,9 +115,9 @@ class SignupActivity : AppCompatActivity() {
         // Create post object
         val user = hashMapOf(
             "id" to UUID.randomUUID().toString(), // or you can use DocumentReference id later
-            "fullName" to fullName,
-            "email" to email,
-            "password" to password,
+            "fullName" to fullName.toString().trim(),
+            "email" to email.toString().trim(),
+            "password" to password.toString().trim(),
             "timestamp" to FieldValue.serverTimestamp()
         )
 
@@ -133,7 +133,8 @@ class SignupActivity : AppCompatActivity() {
             }
             .addOnFailureListener { e ->
                 showLoading(false)
-                Toast.makeText(this, "Failed to add new user: ${e.message}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Failed to add new user: ${e.message}", Toast.LENGTH_SHORT)
+                    .show()
             }
     }
 

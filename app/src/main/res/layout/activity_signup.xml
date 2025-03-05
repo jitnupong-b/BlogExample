@@ -24,7 +24,7 @@
         android:id="@+id/iv_logo"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="72dp"
         android:contentDescription="@string/app_logo"
         android:src="@drawable/ku_logo"
         app:layout_constraintEnd_toEndOf="parent"
