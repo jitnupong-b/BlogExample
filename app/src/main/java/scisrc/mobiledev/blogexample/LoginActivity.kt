@@ -72,6 +72,8 @@ class LoginActivity : AppCompatActivity() {
         binding.btnLogin.text = "Logging in..."
         binding.progressBar.visibility = View.VISIBLE
 
+        var x: String
+
         val email = binding.etEmail.text.toString().trim()
         val password = binding.etPassword.text.toString()
 
