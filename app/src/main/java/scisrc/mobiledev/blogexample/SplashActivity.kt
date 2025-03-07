@@ -39,8 +39,8 @@ class SplashActivity : AppCompatActivity() {
         }
 
         // Check SharedPreferences as backup (or as primary if not using Firebase)
-        val sharedPreferences = getSharedPreferences("login_prefs", Context.MODE_PRIVATE)
-        val isLoggedIn = sharedPreferences.getBoolean("is_logged_in", false)
+        val sharedPreferences = getSharedPreferences("LoginPrefs", Context.MODE_PRIVATE)
+        val isLoggedIn = sharedPreferences.getBoolean("isLoggedIn", false)
 
         if (isLoggedIn) {
             // Check if login credentials are valid or token is still valid
