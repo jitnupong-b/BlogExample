@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import scisrc.mobiledev.blogexample.databinding.ActivitySplashBinding
@@ -15,7 +16,6 @@ class SplashActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         binding = ActivitySplashBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -29,24 +29,17 @@ class SplashActivity : AppCompatActivity() {
     }
 
     private fun checkUserLoginStatus() {
-        // Check Firebase Auth first (if you're using Firebase)
-        val currentUser = FirebaseAuth.getInstance().currentUser
-
-        if (currentUser != null) {
-            // User is already authenticated with Firebase, go to main activity
-            navigateToMainActivity()
-            return
-        }
-
         // Check SharedPreferences as backup (or as primary if not using Firebase)
         val sharedPreferences = getSharedPreferences("LoginPrefs", Context.MODE_PRIVATE)
         val isLoggedIn = sharedPreferences.getBoolean("isLoggedIn", false)
+        val userFullName = sharedPreferences.getString("userFullName", "")
 
         if (isLoggedIn) {
             // Check if login credentials are valid or token is still valid
             // This is where you'd verify a stored token if you're using token-based auth
 
             // For this example, we're assuming the stored login is valid
+            Toast.makeText(this, "Welcome $userFullName!", Toast.LENGTH_SHORT).show()
             navigateToMainActivity()
         } else {
             // User is not logged in, go to login screen
