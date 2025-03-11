@@ -91,7 +91,7 @@ class MainActivity : AppCompatActivity() {
         AlertDialog.Builder(this)
             .setTitle("Edit Post")
             .setView(dialogView)
-            .setPositiveButton("Save") { dialog, _ ->
+            .setPositiveButton("Save") { _, _ ->
                 val updatedPost = post.copy(
                     title = etTitle.text.toString(),
                     content = etContent.text.toString(),
@@ -107,7 +107,7 @@ class MainActivity : AppCompatActivity() {
         AlertDialog.Builder(this)
             .setTitle("Delete Post")
             .setMessage("Are you sure you want to delete this post?")
-            .setPositiveButton("Delete") { dialog, _ ->
+            .setPositiveButton("Delete") { _, _ ->
                 deletePost(post.id)
             }
             .setNegativeButton("Cancel", null)
